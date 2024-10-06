@@ -1,0 +1,35 @@
+<h2 class="text-black text-center text-4xl">
+     Lista de tareas
+</h2>
+<div class="p-5 grid md:grid-cols-1">
+    <div
+      class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+      *ngFor="let task of toDo"
+      
+    >
+      <a class="flex items-center space-x-4 rtl:space-x-reverse">
+        <div class="flex-shrink-0">
+          <img class="w-10 h-10 rounded-full" [src]="task.image" />
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-medium">
+            {{ task.name }}
+          </p>
+        </div>
+  
+        <div class="inline-table items-center text-base font-semibold pr-2">
+          <button          
+            type="button"
+            class="text-white text-xs bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg px-5 py-2.5 text-center me-2 mb-2"
+            (click)="handleDeleteTask(task.id)"
+          >
+            Realizada
+          </button>
+        </div>
+      </a>
+    </div>
+</div>
+<div *ngIf="toDo.length === 0">
+    <h3 class="text-center font-bold text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 rounded-lg text-sm px-5 py-2.5 me-2 mb-2">No hay tareas por realizar,te puedes ir de fiesta </h3>
+</div>
+

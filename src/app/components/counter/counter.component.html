@@ -1,0 +1,23 @@
+<h1 class="text-black text-4xl text-center">
+    Contador: <small class="font-bold">{{counter}}</small>
+</h1>
+<div class="p-5 grid md:grid-cols-2">
+    <button
+        (click)="handleUpdateCounter()"
+        type="button" 
+        class="w-auto text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+        Increase
+    </button>
+    <button
+        (click)="handleUpdateCounter(-1)"
+        type="button" 
+         class="w-auto text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+        Decrease
+    </button>
+    <button 
+        (click)="handleReset()"
+        type="button" 
+        class="col-span-2 text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+        Reset
+    </button>
+</div>
